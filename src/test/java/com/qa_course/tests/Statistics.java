@@ -25,20 +25,16 @@ public class Statistics extends TestUtil {
     public void executeStatsTest(String searchField, String dividendsVal, String priceMrqVal) {
         PopUpPage popUpPage = new PopUpPage(driver);
         HomePage homePage = popUpPage.goToHomePage();
-        Reporter.log("Successful entry to the home page");
 
         MainInfoPage mainInfoPage = homePage.searchCompany(searchField);
-        Reporter.log("Successful entry to the main statistics page");
 
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(mainInfoPage.getDividendsValue(), dividendsVal);
 
         StatisticsPage statisticsPage = mainInfoPage.viewStats();
-        Reporter.log("Successful entry to the statistics page");
 
         SoftAssert softAssert1 = new SoftAssert();
         softAssert1.assertEquals(statisticsPage.getPriceBookValue(), priceMrqVal);
-
-
-    }
+     }
+    
 }
