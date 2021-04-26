@@ -31,13 +31,10 @@ public class SignUpTest extends TestUtil {
 
         PopUpPage popUpPage = new PopUpPage(driver);
         HomePage homePage = popUpPage.goToHomePage();
-        Reporter.log("Successful entry to the home page");
 
         SignInPage signInPage = homePage.clickSignInButton();
-        Reporter.log("Successful entry to the Sign In page");
 
         SignUpPage signUpPage = signInPage.clickSignUpButton();
-        Reporter.log("Successful entry to the Sign In page");
 
         signUpPage.fillName(firstName, lastName);
         signUpPage.fillEmail(emailAddress);
